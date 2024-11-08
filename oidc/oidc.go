@@ -289,6 +289,42 @@ func (p *Provider) UserInfoEndpoint() string {
 	return p.userInfoURL
 }
 
+// setAuthURL permit to overide the OpenID Connect authURL endpoint for the given
+// provider.
+func (p *Provider) setAuthURL(endpoint string) {
+	p.authURL=endpoint
+}
+
+// setDeviceAuthURL permit to overide the OpenID Connect deviceAuthURL endpoint for the given
+// provider.
+func (p *Provider) setDeviceAuthURL(endpoint string) {
+	p.deviceAuthURL=endpoint
+}
+
+// setTokenURL permit to overide the OpenID Connect tokenURL endpoint for the given
+// provider.
+func (p *Provider) setTokenURL(endpoint string) {
+	p.tokenURL=endpoint
+}
+
+// setTokenURL permit to overide the OpenID Connect userInfoURL endpoint for the given
+// provider.
+func (p *Provider) setUserInfoEndpoint(endpoint string) {
+	p.userInfoURL=endpoint
+}
+
+// setJWKSURL permit to overide the OpenID Connect jwksURL endpoint for the given
+// provider.
+func (p *Provider) setJWKSURL(endpoint string) {
+	p.jwksURL=endpoint
+}
+
+// setJWKSURL permit to overide the OpenID Connect JWKSURL endpoint for the given
+// provider.
+func (p *Provider) setAlgorithms(algorithm []string) {
+	p.algorithms=algorithm
+}
+
 // UserInfo represents the OpenID Connect userinfo claims.
 type UserInfo struct {
 	Subject       string `json:"sub"`
